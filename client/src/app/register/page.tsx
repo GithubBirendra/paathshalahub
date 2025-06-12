@@ -1,8 +1,9 @@
 import React from 'react'
 
 const page = () => {
+  let name="Birendra Bohara"
   return (
-    <div>Hello World</div>
+    <div>Hello From {name}</div>
   )
 }
 
