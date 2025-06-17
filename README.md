@@ -45,7 +45,7 @@ Paathshala is a MERN stack-based Learning Management System inspired by platform
 - Tags like "Popular", "Featured", "Free", etc.
 
 ### 💸 Payments
-- **Paid courses with Stripe or Khalti (Nepal)** integration
+- **Paid courses with Esewa or Khalti (Nepal)** integration
 - Purchase history
 - Enroll instantly upon successful payment
 
@@ -78,7 +78,7 @@ Paathshala is a MERN stack-based Learning Management System inspired by platform
 - Formik + Yup
 - Axios
 
-  ### 🔧 Backend
+### 🔧 Backend
 - Node.js
 - Express.js
 - MongoDB + Mongoose
