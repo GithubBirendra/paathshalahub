@@ -1,6 +1,6 @@
 # 📘 Paathshala – Learning Management System (LMS)
 
-Paathshala is a MERN stack-based Learning Management System inspired by platforms like **Udemy** and **Coursera**, aiming to simplify online education. Instructors can upload and manage courses, while students can learn, track progress, and earn certificates — all from one intuitive platform.
+Paathshala is a MERN stack-based Learning Management System inspired by platforms aiming to simplify online education. Instructors can upload and manage courses, while students can learn, track progress, and earn certificates — all from one intuitive platform.
 
 ---
 
@@ -71,14 +71,6 @@ Paathshala is a MERN stack-based Learning Management System inspired by platform
 
 ## 🧱 Technology Stack
 
-### 🔧 Backend
-- Node.js
-- Express.js
-- MongoDB + Mongoose
-- bcrypt
-- jsonwebtoken (JWT)
-- Multer (for file uploads)
-
 ### 🌐 Frontend
 - Next.js (App Router)
 - Tailwind CSS + Shadcn UI
@@ -86,6 +78,14 @@ Paathshala is a MERN stack-based Learning Management System inspired by platform
 - Formik + Yup
 - Axios
 
+  ### 🔧 Backend
+- Node.js
+- Express.js
+- MongoDB + Mongoose
+- bcrypt
+- jsonwebtoken (JWT)
+- Multer (for file uploads)
+  
 ---
 
 ## 🚀 Project Phases & Progress
@@ -128,7 +128,7 @@ Paathshala is a MERN stack-based Learning Management System inspired by platform
 
 ### 💰 Phase 7: Paid Courses & Payment
 - [ ] Set free or paid status for course
-- [x] **Use Stripe or Khalti (for Nepal) for paid courses**
+- [x] **Use E-sewa or Khalti (for Nepal) for paid courses**
 - [ ] Payment verification & enrollment access post-payment
 - [ ] Payment history section in dashboard
 
@@ -162,5 +162,5 @@ Paathshala is a MERN stack-based Learning Management System inspired by platform
 
 1. **Clone the Repository**:
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/GithubBirendra/paathshalahub.git
    cd paathshala
