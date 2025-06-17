@@ -164,7 +164,7 @@ Paathshala is a MERN stack-based Learning Management System aiming to simplify o
 
     ```bash
     git clone https://github.com/GithubBirendra/paathshalahub.git
-   cd paathshala
+    cd paathshala
     ```
     
 2.  **Backend Setup**:
