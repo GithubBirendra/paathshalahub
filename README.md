@@ -155,12 +155,60 @@ Paathshala is a MERN stack-based Learning Management System inspired by platform
 ## 🛠️ Getting Started
 
 ### ⚙ Prerequisites
-- Node.js (LTS)
-- MongoDB (Local or Atlas)
+- Node.js (LTS version recommended)
+- MongoDB (local installation or cloud-based service like MongoDB Atlas)
 
 ### 🔧 Installation
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/GithubBirendra/paathshalahub.git
+1.  **Clone the repository**:
+
+    ```bash
+    git clone https://github.com/GithubBirendra/paathshalahub.git
    cd paathshala
+    ```
+    
+2.  **Backend Setup**:
+
+    ```bash
+    cd backend
+    npm install
+    ```
+
+    Create a `.env` file in the `backend` directory and add your MongoDB connection string and JWT secret:
+
+    ```env
+    MONGO_URI="your_mongodb_connection_string"
+    JWT_SECRET="a_strong_random_secret_key"
+    ```
+
+    Run the backend server:
+
+    ```bash
+    npm run dev
+    ```
+
+3.  **Frontend Setup**:
+
+    ```bash
+    cd frontend
+    npm install
+    ```
+
+    Run the frontend development server:
+
+    ```bash
+    npm run dev
+    ```
+
+    The frontend should now be accessible at `http://localhost:3000`.
+
+---
+
+## Contact
+
+If you have any questions, feel free to reach out!
+
+* **Name**: [Birendra Bohara]
+* **Email**: [bbirendra693@gmail.com]
+* **GitHub**: [https://github.com/GithubBirendra/paathshalahub]
+   
