@@ -1,213 +1,132 @@
 # 📘 Paathshala – Learning Management System (LMS)
 
-Paathshala is a MERN stack-based Learning Management System aiming to simplify online education. Instructors can upload and manage courses, while students can learn, track progress, and earn certificates — all from one intuitive platform.
+**Paathshala** is a full-featured MERN stack Learning Management System where instructors can publish interactive courses, and students can enroll, learn, and earn certifications.
 
 ---
 
 ## 📌 Table of Contents
+
 - [About](#about)
 - [Features](#features)
 - [Technology Stack](#technology-stack)
-- [Project Phases & Progress](#project-phases--progress)
+- [Project Phases](#project-phases)
 - [Getting Started](#getting-started)
 - [Contact](#contact)
 
 ---
 
-## 📖 About <a id="about"></a>
+## 📖 About
 
-**Paathshala** aims to bridge the education gap by enabling anyone to become a learner or an instructor. It provides:
-- A platform for instructors to publish high-quality courses.
-- A space for students to enroll, learn, and track their growth.
-- Affordable and accessible e-learning for everyone, anywhere.
+Paathshala aims to make digital education accessible and interactive. It offers dashboards, role-based features, media support, and more — bringing instructors and learners together in one place.
 
 ---
 
-## ✨ Features <a id="features"></a>
+## ✨ Features
 
-### 👤 Authentication & Role Management
-- Secure registration/login (JWT + bcrypt)
-- Separate access for students and instructors
-- Dashboard-based navigation by user role
-
-### 🎓 Course Management (Instructor)
-- Course creation/edit/delete with multimedia support
-- **Multer-based** image/video upload
-- Dashboard view of all published courses
-
-### 🧑‍💻 Enrollment & Learning (Student)
-- Enroll in courses
-- Watch course videos, download resources
-- Progress tracking system
-
-### 🔍 Course Discovery
-- **Search & Filter**: Find courses by name, category, rating
-- Tags like "Popular", "Featured", "Free", etc.
-
-### 💸 Payments
-- **Paid courses with Esewa or Khalti (Nepal)** integration
-- Purchase history
-- Enroll instantly upon successful payment
-
-### 🌓 UI Personalization
-- **Light/Dark theme toggle**
-- Responsive mobile-first UI using Tailwind
-
-### 📊 Dashboards
-- Instructor Dashboard: View stats, students, course performance
-- Student Dashboard: View enrolled courses, progress
-
-### 💬 Communication & Feedback
-- Ratings & Reviews
-- Comment system per course
-- (Coming Soon) Real-time chat with instructors
-
-### 🔐 Admin Panel (Optional)
-- Manage users and courses
-- Approve/ban instructors
-- Remove inappropriate content
+- 🔐 Secure Authentication & Role Management  
+- 🎓 Instructor & Student Dashboards  
+- 📚 Course Uploading (Video, Description, Resources)  
+- 📥 Enrollment System (Free & Paid)  
+- 📊 Progress Tracking  
+- 💬 Ratings & Comments  
+- 🎨 Light/Dark Theme Toggle  
+- 🧾 Admin Panel for Content & User Control  
+- 💸 Esewa/Khalti Payment Integration (Coming Soon)  
 
 ---
 
-## 🧱 Technology Stack <a id="technology-stack"></a>
+## 🧱 Technology Stack
 
-### 🌐 Frontend
+### Frontend
+
 - Next.js (App Router)
 - Tailwind CSS + Shadcn UI
-- Redux
+- Redux Toolkit
 - Formik + Yup
 - Axios
 
-### 🔧 Backend
-- Node.js
-- Express.js
+### Backend
+
+- Node.js + Express
 - MongoDB + Mongoose
-- bcrypt
-- jsonwebtoken (JWT)
-- Multer (for file uploads)
+- JWT (jsonwebtoken) + bcrypt
+- Multer (File Upload)
 
 ---
 
-## 🚀 Project Phases & Progress <a id="project-phases--progress"></a>
-
-### Phase 1: Authentication Setup
-- [x] Register & login using JWT and bcrypt  
-- [x] Basic login & register frontend pages  
-- [x] Connect frontend and backend  
-
-### Phase 2: User Roles & Access Control
-- [ ] Add `role` field in user model: student, instructor  
-- [ ] Show different dashboards/pages by role  
-- [ ] Middleware to protect instructor-only/student-only routes  
-
-### Phase 3: Course Management (Instructor Panel)
-- [ ] Create `Course` model (title, price, content, thumbnail, etc.)  
-- [ ] Instructor: Upload course form  
-- [ ] Use Multer for image/video upload  
-- [ ] Display uploaded courses in dashboard  
-
-### Phase 4: Enrollment & Learning (Student Side)
-- [ ] Enroll in a course  
-- [ ] Watch uploaded course videos/modules  
-- [ ] Track and save course progress  
-
-### Phase 5: Dashboards  
-#### Student:
-- [ ] My Courses section  
-- [ ] Progress tracking  
-
-#### Instructor:
-- [ ] Course stats  
-- [ ] Enrollments count  
-
-### Phase 6: Discovery & Interaction
-- [ ] Add Search & Filter for course discovery  
-- [ ] Filter by category, price, rating, difficulty  
-- [ ] Display featured/latest/popular courses  
-- [ ] Comments & Reviews system  
-
-### Phase 7: Paid Courses & Payment
-- [ ] Set free or paid status for course  
-- [ ] Use E-sewa or Khalti (for Nepal) for paid courses  
-- [ ] Payment verification & enrollment access post-payment  
-- [ ] Payment history section in dashboard  
-
-### Phase 8: Personalization & UI
-- [ ] Add Light/Dark Theme toggle  
-- [ ] Save theme preference in localStorage or user profile  
-- [ ] Polished UI with responsive layout  
-
-### Phase 9: Admin Panel
-- [ ] View all users and courses  
-- [ ] Block/verify instructors  
-- [ ] Approve/reject course uploads  
-- [ ] Remove spam comments  
-
-### Phase 10: Deployment & Optimization
-- [ ] Host frontend (Vercel)  
-- [ ] Host backend (Render / Railway)  
-- [ ] Use MongoDB Atlas  
-- [ ] Custom domain + SEO  
-- [ ] Performance improvements  
+## 🚀 Project Phases
 
 ---
 
-## 🛠️ Getting Started <a id="getting-started"></a>
+### ✅ Phase 1: Authentication, Roles & Dashboards
+
+#### Frontend:
+- [x] Create login & register pages
+- [x] Form validation with Formik + Yup
+- [x] Role-based dashboard routing
+- [x] Redux auth setup
+- [x] Basic layout (Navbar, Footer)
+
+#### Backend:
+- [x] Setup Express server
+- [x] MongoDB connection
+- [x] Create user schema with roles (student, instructor, admin)
+- [x] JWT-based authentication system
+- [x] Role-based access middleware
+
+---
+
+### 🛠 Phase 2: Course Management & Learning Modules
+
+#### Frontend:
+- [x] Instructor: Create/edit course page
+- [x] File upload UI (videos, images)
+- [x] Display course cards
+- [ ] Student: Enroll in course
+- [ ] Course content viewer page
+- [ ] Track completed videos
+- [ ] Add reviews section
+
+#### Backend:
+- [x] Create Course schema
+- [x] Add Multer for file/video uploads
+- [x] Instructor CRUD APIs for course
+- [ ] Student course enrollment logic
+- [ ] Progress tracking model
+- [ ] Rating/comment schema
+
+---
+
+### 🕐 Phase 3: Payments, Admin Tools & UI Polishing
+
+#### Frontend:
+- [ ] Payment flow UI
+- [ ] Admin panel pages (manage users, courses)
+- [ ] Chat system (Socket.io or polling)
+- [ ] Add search/filter for courses
+- [ ] SEO optimization & theme preference save
+
+#### Backend:
+- [ ] Payment gateway integration (Esewa/Khalti)
+- [ ] Admin user management API
+- [ ] Course approval/reject APIs
+- [ ] Chat system model
+
+---
+
+## 🛠 Getting Started
 
 ### ⚙ Prerequisites
-- Node.js (LTS version recommended)
-- MongoDB (local installation or cloud-based service like MongoDB Atlas)
+
+- Node.js (LTS)
+- MongoDB (Local or Atlas)
+
+---
 
 ### 🔧 Installation
 
-1.  **Clone the repository**:
+1. **Clone Repository**
 
-    ```bash
-    git clone https://github.com/GithubBirendra/paathshalahub.git
-    cd paathshala
-    ```
-    
-2.  **Backend Setup**:
-
-    ```bash
-    cd backend
-    npm install
-    ```
-
-    Create a `.env` file in the `backend` directory and add your MongoDB connection string and JWT secret:
-
-    ```env
-    MONGO_URI="your_mongodb_connection_string"
-    JWT_SECRET="a_strong_random_secret_key"
-    ```
-
-    Run the backend server:
-
-    ```bash
-    npm run dev
-    ```
-
-3.  **Frontend Setup**:
-
-    ```bash
-    cd frontend
-    npm install
-    ```
-
-    Run the frontend development server:
-
-    ```bash
-    npm run dev
-    ```
-
-    The frontend should now be accessible at `http://localhost:3000`.
-
----
-
-## 📞 Contact <a id="contact"></a>
-
-If you have any questions, feel free to reach out!
-
-* **Name**: Birendra Bohara  
-* **Email**: bbirendra693@gmail.com  
-* **GitHub**: [https://github.com/GithubBirendra/paathshalahub](https://github.com/GithubBirendra/paathshalahub)
+```bash
+git clone https://github.com/GithubBirendra/paathshalahub.git
+cd paathshalahub
