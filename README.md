@@ -91,9 +91,9 @@ Paathshala is a MERN stack-based Learning Management System aiming to simplify o
 ## 🚀 Project Phases & Progress <a id="project-phases--progress"></a>
 
 ### Phase 1: Authentication Setup
-- [ ] Register & login using JWT and bcrypt  
-- [ ] Basic login & register frontend pages  
-- [ ] Connect frontend and backend  
+- [x] Register & login using JWT and bcrypt  
+- [x] Basic login & register frontend pages  
+- [x] Connect frontend and backend  
 
 ### Phase 2: User Roles & Access Control
 - [ ] Add `role` field in user model: student, instructor  
@@ -137,7 +137,7 @@ Paathshala is a MERN stack-based Learning Management System aiming to simplify o
 - [ ] Save theme preference in localStorage or user profile  
 - [ ] Polished UI with responsive layout  
 
-### Phase 9: Admin Panel (Optional)
+### Phase 9: Admin Panel
 - [ ] View all users and courses  
 - [ ] Block/verify instructors  
 - [ ] Approve/reject course uploads  
