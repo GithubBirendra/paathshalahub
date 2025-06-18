@@ -90,65 +90,65 @@ Paathshala is a MERN stack-based Learning Management System aiming to simplify o
 
 ## 🚀 Project Phases & Progress <a id="project-phases--progress"></a>
 
-### ✅ Phase 1: Authentication Setup
-- [x] Register & login using JWT and bcrypt
-- [x] Basic login & register frontend pages
-- [x] Connect frontend and backend
+### Phase 1: Authentication Setup
+- [ ] Register & login using JWT and bcrypt  
+- [ ] Basic login & register frontend pages  
+- [ ] Connect frontend and backend  
 
-### 🧑‍🎓 Phase 2: User Roles & Access Control
-- [x] Add `role` field in user model: student, instructor
-- [x] Show different dashboards/pages by role
-- [x] Middleware to protect instructor-only/student-only routes
+### Phase 2: User Roles & Access Control
+- [ ] Add `role` field in user model: student, instructor  
+- [ ] Show different dashboards/pages by role  
+- [ ] Middleware to protect instructor-only/student-only routes  
 
-### 🎓 Phase 3: Course Management (Instructor Panel)
-- [x] Create `Course` model (title, price, content, thumbnail, etc.)
-- [x] Instructor: Upload course form
-- [x] **Use Multer for image/video upload**
-- [x] Display uploaded courses in dashboard
+### Phase 3: Course Management (Instructor Panel)
+- [ ] Create `Course` model (title, price, content, thumbnail, etc.)  
+- [ ] Instructor: Upload course form  
+- [ ] Use Multer for image/video upload  
+- [ ] Display uploaded courses in dashboard  
 
-### 🧑‍💻 Phase 4: Enrollment & Learning (Student Side)
-- [ ] Enroll in a course
-- [ ] Watch uploaded course videos/modules
-- [ ] Track and save course progress
+### Phase 4: Enrollment & Learning (Student Side)
+- [ ] Enroll in a course  
+- [ ] Watch uploaded course videos/modules  
+- [ ] Track and save course progress  
 
-### 📊 Phase 5: Dashboards
+### Phase 5: Dashboards  
 #### Student:
-- [ ] My Courses section
-- [ ] Progress tracking
+- [ ] My Courses section  
+- [ ] Progress tracking  
 
 #### Instructor:
-- [ ] Course stats
-- [ ] Enrollments count
+- [ ] Course stats  
+- [ ] Enrollments count  
 
-### 🔍 Phase 6: Discovery & Interaction
-- [x] **Add Search & Filter for course discovery**
-- [ ] Filter by category, price, rating, difficulty
-- [ ] Display featured/latest/popular courses
-- [ ] Comments & Reviews system
+### Phase 6: Discovery & Interaction
+- [ ] Add Search & Filter for course discovery  
+- [ ] Filter by category, price, rating, difficulty  
+- [ ] Display featured/latest/popular courses  
+- [ ] Comments & Reviews system  
 
-### 💰 Phase 7: Paid Courses & Payment
-- [ ] Set free or paid status for course
-- [x] **Use E-sewa or Khalti (for Nepal) for paid courses**
-- [ ] Payment verification & enrollment access post-payment
-- [ ] Payment history section in dashboard
+### Phase 7: Paid Courses & Payment
+- [ ] Set free or paid status for course  
+- [ ] Use E-sewa or Khalti (for Nepal) for paid courses  
+- [ ] Payment verification & enrollment access post-payment  
+- [ ] Payment history section in dashboard  
 
-### 🌙 Phase 8: Personalization & UI
-- [x] **Add Light/Dark Theme toggle**
-- [ ] Save theme preference in localStorage or user profile
-- [ ] Polished UI with responsive layout
+### Phase 8: Personalization & UI
+- [ ] Add Light/Dark Theme toggle  
+- [ ] Save theme preference in localStorage or user profile  
+- [ ] Polished UI with responsive layout  
 
-### 🔐 Phase 9: Admin Panel (Optional)
-- [ ] View all users and courses
-- [ ] Block/verify instructors
-- [ ] Approve/reject course uploads
-- [ ] Remove spam comments
+### Phase 9: Admin Panel (Optional)
+- [ ] View all users and courses  
+- [ ] Block/verify instructors  
+- [ ] Approve/reject course uploads  
+- [ ] Remove spam comments  
 
-### 🌍 Phase 10: Deployment & Optimization
-- [ ] Host frontend (Vercel)
-- [ ] Host backend (Render / Railway)
-- [ ] Use MongoDB Atlas
-- [ ] Custom domain + SEO
-- [ ] Performance improvements
+### Phase 10: Deployment & Optimization
+- [ ] Host frontend (Vercel)  
+- [ ] Host backend (Render / Railway)  
+- [ ] Use MongoDB Atlas  
+- [ ] Custom domain + SEO  
+- [ ] Performance improvements  
 
 ---
 
@@ -208,6 +208,6 @@ Paathshala is a MERN stack-based Learning Management System aiming to simplify o
 
 If you have any questions, feel free to reach out!
 
-* **Name**: [Birendra Bohara]  
-* **Email**: [bbirendra693@gmail.com]  
+* **Name**: Birendra Bohara  
+* **Email**: bbirendra693@gmail.com  
 * **GitHub**: [https://github.com/GithubBirendra/paathshalahub](https://github.com/GithubBirendra/paathshalahub)
