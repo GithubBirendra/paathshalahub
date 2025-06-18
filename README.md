@@ -14,7 +14,7 @@ Paathshala is a MERN stack-based Learning Management System aiming to simplify o
 
 ---
 
-## 📖 About
+## 📖 About <a id="about"></a>
 
 **Paathshala** aims to bridge the education gap by enabling anyone to become a learner or an instructor. It provides:
 - A platform for instructors to publish high-quality courses.
@@ -23,7 +23,7 @@ Paathshala is a MERN stack-based Learning Management System aiming to simplify o
 
 ---
 
-## ✨ Features
+## ✨ Features <a id="features"></a>
 
 ### 👤 Authentication & Role Management
 - Secure registration/login (JWT + bcrypt)
@@ -69,7 +69,7 @@ Paathshala is a MERN stack-based Learning Management System aiming to simplify o
 
 ---
 
-## 🧱 Technology Stack
+## 🧱 Technology Stack <a id="technology-stack"></a>
 
 ### 🌐 Frontend
 - Next.js (App Router)
@@ -85,10 +85,10 @@ Paathshala is a MERN stack-based Learning Management System aiming to simplify o
 - bcrypt
 - jsonwebtoken (JWT)
 - Multer (for file uploads)
-  
+
 ---
 
-## 🚀 Project Phases & Progress
+## 🚀 Project Phases & Progress <a id="project-phases--progress"></a>
 
 ### ✅ Phase 1: Authentication Setup
 - [x] Register & login using JWT and bcrypt
@@ -152,7 +152,7 @@ Paathshala is a MERN stack-based Learning Management System aiming to simplify o
 
 ---
 
-## 🛠️ Getting Started
+## 🛠️ Getting Started <a id="getting-started"></a>
 
 ### ⚙ Prerequisites
 - Node.js (LTS version recommended)
@@ -204,11 +204,10 @@ Paathshala is a MERN stack-based Learning Management System aiming to simplify o
 
 ---
 
-## Contact
+## 📞 Contact <a id="contact"></a>
 
 If you have any questions, feel free to reach out!
 
-* **Name**: [Birendra Bohara]
-* **Email**: [bbirendra693@gmail.com]
-* **GitHub**: [https://github.com/GithubBirendra/paathshalahub]
-   
+* **Name**: [Birendra Bohara]  
+* **Email**: [bbirendra693@gmail.com]  
+* **GitHub**: [https://github.com/GithubBirendra/paathshalahub](https://github.com/GithubBirendra/paathshalahub)
