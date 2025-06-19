@@ -59,7 +59,7 @@ const Register = () => {
     //   title: "Registration Successful!",
     //   description: `Welcome ${values.fullName}! Your account has been created.`,
     // });
-    toast("Registration Successful!");
+    // toast("Registration Successful!");
     const {data} = await axios.post('http://localhost:8080/register', values)
     toast(data);
   };

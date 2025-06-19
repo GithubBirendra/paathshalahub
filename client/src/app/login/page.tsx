@@ -13,6 +13,8 @@ import { User, Mail, Lock} from 'lucide-react';
 import Link from 'next/link';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import { useDispatch } from 'react-redux';
+import { addLoginDetails } from '@/redux/reducerSlices/userSlice';
 
 
 // Validation schema using Yup
@@ -39,16 +41,17 @@ const Login = () => {
   };
 
   const router = useRouter();
+  const dispatch = useDispatch();
   const handleSubmit = async (values: FormValues) => {
-    // console.log('Registration data:', values);
-    // toast({
-    //   title: "Registration Successful!",
-    //   description: `Welcome ${values.fullName}! Your account has been created.`,
-    // });
-
     const {data} = await axios.post('http://localhost:8080/login', values)
     if(data?.isLoggedIn) router.push('/');
     toast(data?.message);
+
+    if(data){
+      debugger;
+      dispatch(addLoginDetails(data));
+    }
+  
   };
 
   return (
@@ -100,7 +103,7 @@ const Login = () => {
                       id="password"
                       name="password"
                       type="password"
-                      placeholder="Create password"
+                      placeholder="Enter your password"
                       className={`transition-all duration-200 ${errors.password && touched.password ? 'border-destructive' : 'focus:border-primary'}`}
                     />
                     <ErrorMessage name="password" component="div" className="text-sm text-destructive" />
