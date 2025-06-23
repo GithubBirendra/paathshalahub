@@ -94,8 +94,8 @@ Tools to boost engagement and learning experience.
 - [ ] Course comment/discussion system
 - [ ] Course reviews and ratings
 - [ ] Show featured/latest/popular courses
-## ⚙️ Installation
 
+## ⚙️ Installation
 ### Prerequisites
 - Node.js (v18+)
 - MongoDB
@@ -117,6 +117,8 @@ cp .env.example .env
 
 # 4. Run the development server
 npm run dev
+
+---
 
 ## 📞 Contact <a id="contact"></a>
 
