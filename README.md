@@ -117,7 +117,7 @@ cp .env.example .env
 
 # 4. Run the development server
 npm run dev
-
+```
 ---
 
 ## 📞 Contact <a id="contact"></a>
