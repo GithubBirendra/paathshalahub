@@ -57,6 +57,7 @@ This **Paathshala** is a web-based system developed to streamline online educati
 - **Zod/Yup** for validation
 
 ---
+## 📦 Versioning & Roadmap
 
 ### ✅ Version 1.0 – Minimum Viable Product (MVP)
 
@@ -116,9 +117,6 @@ cp .env.example .env
 
 # 4. Run the development server
 npm run dev
-## 📦 Versioning & Roadmap
-## 📦 Versioning & Roadmap
-
 
 ## 📞 Contact <a id="contact"></a>
 
