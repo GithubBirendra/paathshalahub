@@ -12,7 +12,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
+} from "@/components/navigation-menu"
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -210,3 +210,4 @@ function ListItem({
     </li>
   )
 }
+

@@ -44,7 +44,21 @@ const Login = () => {
   const dispatch = useDispatch();
   const handleSubmit = async (values: FormValues) => {
     const {data} = await axios.post('http://localhost:8080/login', values)
-    if(data?.isLoggedIn) router.push('/');
+    if(data?.isLoggedIn) 
+    {
+      if(data.user.role === 'teacher') {
+        router.push('/instructor');
+    }  else if(data.user.role === 'student') {
+        router.push('/');
+      }
+
+      else{
+      router.back();
+
+      }
+    }
+
+      
     toast(data?.message);
 
     if(data){

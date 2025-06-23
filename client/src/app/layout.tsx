@@ -3,6 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner"
 import  ReduxProvider  from "@/redux/provider";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/app-sidebar";
+import { ToastProvider } from "@/components/providers/toaster-provider";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -29,8 +32,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ReduxProvider>
+          {/* <SidebarProvider>
+            <AppSidebar/>
+             <SidebarTrigger /> */}
+             <ToastProvider/>
+            <Toaster />
         {children}
-         <Toaster />
+         {/* </SidebarProvider> */}
          </ReduxProvider>
       </body>
     </html>

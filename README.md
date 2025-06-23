@@ -1,208 +1,124 @@
 # 📘 Paathshala – Learning Management System (LMS)
 
-Paathshala is a MERN stack-based Learning Management System aiming to simplify online education. Instructors can upload and manage courses, while students can learn, track progress, and earn certificates — all from one intuitive platform.
-
+Paathshala is a MERN stack-based Learning Management System aiming to simplify online education. Instructors can upload and manage courses, while students can learn, track progress — all from one intuitive platform.
 ---
 
 ## 📌 Table of Contents
-- [About](#about)
-- [Features](#features)
-- [Technology Stack](#technology-stack)
-- [Project Phases & Progress](#project-phases--progress)
-- [Getting Started](#getting-started)
-- [Contact](#contact)
+
+- [📚 Introduction](#-introduction)
+- [🚀 Features](#-features)
+- [🛠️ Technologies Used](#️-technologies-used)
+- [📦 Versioning & Roadmap](#-versioning--roadmap)
+- [⚙️ Installation](#️-installation)
+- [📩 Contact](#-contact)
 
 ---
 
-## 📖 About <a id="about"></a>
+## 📚 Introduction
 
-**Paathshala** aims to bridge the education gap by enabling anyone to become a learner or an instructor. It provides:
-- A platform for instructors to publish high-quality courses.
-- A space for students to enroll, learn, and track their growth.
-- Affordable and accessible e-learning for everyone, anywhere.
+This **Paathshala** is a web-based system developed to streamline online education, enabling interactive course delivery, tracking, and management. Designed for both **students** and **teachers**, it includes user dashboards, course management, and enrollment tracking with progressive feature upgrades in each version.
 
 ---
 
-## ✨ Features <a id="features"></a>
+## 🚀 Features
 
-### 👤 Authentication & Role Management
-- Secure registration/login (JWT + bcrypt)
-- Separate access for students and instructors
-- Dashboard-based navigation by user role
+### 👤 Authentication
+- ✅ Register/Login system for Students and Teachers
+- ✅ Role-based access (Student/Teacher)
 
-### 🎓 Course Management (Instructor)
-- Course creation/edit/delete with multimedia support
-- **Multer-based** image/video upload
-- Dashboard view of all published courses
+### 🧑‍🎓 Student Dashboard
+- ✅ View available courses
+- ✅ Enroll in courses
+- ✅ View enrolled courses and course progress
 
-### 🧑‍💻 Enrollment & Learning (Student)
-- Enroll in courses
-- Watch course videos, download resources
-- Progress tracking system
-
-### 🔍 Course Discovery
-- **Search & Filter**: Find courses by name, category, rating
-- Tags like "Popular", "Featured", "Free", etc.
-
-### 💸 Payments
-- **Paid courses with Esewa or Khalti (Nepal)** integration
-- Purchase history
-- Enroll instantly upon successful payment
-
-### 🌓 UI Personalization
-- **Light/Dark theme toggle**
-- Responsive mobile-first UI using Tailwind
-
-### 📊 Dashboards
-- Instructor Dashboard: View stats, students, course performance
-- Student Dashboard: View enrolled courses, progress
-
-### 💬 Communication & Feedback
-- Ratings & Reviews
-- Comment system per course
-- (Coming Soon) Real-time chat with instructors
-
-### 🔐 Admin Panel (Optional)
-- Manage users and courses
-- Approve/ban instructors
-- Remove inappropriate content
+### 👨‍🏫 Teacher Dashboard
+- ✅ Upload and manage courses
+- ✅ Track enrolled students
+- ✅ Monitor course engagement and progress
 
 ---
 
-## 🧱 Technology Stack <a id="technology-stack"></a>
+## 🛠️ Technologies Used
 
-### 🌐 Frontend
-- Next.js (App Router)
-- Tailwind CSS + Shadcn UI
-- Redux
-- Formik + Yup
-- Axios
+### Frontend:
+- **Next.js** (React)
+- **Tailwind CSS** 
+- **ShadCN/UI** (UI Components)
+- **Redux**
+- **Formik + Yup**
+- **Axios**
 
-### 🔧 Backend
-- Node.js
-- Express.js
-- MongoDB + Mongoose
-- bcrypt
-- jsonwebtoken (JWT)
-- Multer (for file uploads)
-
----
-
-## 🚀 Project Phases & Progress <a id="project-phases--progress"></a>
-
-### Phase 1: Authentication Setup
-- [x] Register & login using JWT and bcrypt  
-- [x] Basic login & register frontend pages  
-- [x] Connect frontend and backend  
-
-### Phase 2: User Roles & Access Control
-- [ ] Add `role` field in user model: student, instructor  
-- [ ] Show different dashboards/pages by role  
-- [ ] Middleware to protect instructor-only/student-only routes  
-
-### Phase 3: Course Management (Instructor Panel)
-- [ ] Create `Course` model (title, price, content, thumbnail, etc.)  
-- [ ] Instructor: Upload course form  
-- [ ] Use Multer for image/video upload  
-- [ ] Display uploaded courses in dashboard  
-
-### Phase 4: Enrollment & Learning (Student Side)
-- [ ] Enroll in a course  
-- [ ] Watch uploaded course videos/modules  
-- [ ] Track and save course progress  
-
-### Phase 5: Dashboards  
-#### Student:
-- [ ] My Courses section  
-- [ ] Progress tracking  
-
-#### Instructor:
-- [ ] Course stats  
-- [ ] Enrollments count  
-
-### Phase 6: Discovery & Interaction
-- [ ] Add Search & Filter for course discovery  
-- [ ] Filter by category, price, rating, difficulty  
-- [ ] Display featured/latest/popular courses  
-- [ ] Comments & Reviews system  
-
-### Phase 7: Paid Courses & Payment
-- [ ] Set free or paid status for course  
-- [ ] Use E-sewa or Khalti (for Nepal) for paid courses  
-- [ ] Payment verification & enrollment access post-payment  
-- [ ] Payment history section in dashboard  
-
-### Phase 8: Personalization & UI
-- [ ] Add Light/Dark Theme toggle  
-- [ ] Save theme preference in localStorage or user profile  
-- [ ] Polished UI with responsive layout  
-
-### Phase 9: Admin Panel
-- [ ] View all users and courses  
-- [ ] Block/verify instructors  
-- [ ] Approve/reject course uploads  
-- [ ] Remove spam comments  
-
-### Phase 10: Deployment & Optimization
-- [ ] Host frontend (Vercel)  
-- [ ] Host backend (Render / Railway)  
-- [ ] Use MongoDB Atlas  
-- [ ] Custom domain + SEO  
-- [ ] Performance improvements  
+### Backend:
+- **Node.js** 
+- **MongoDB + Mongoose**
+- **JWT** for authentication
+- **bcrypt**
+- **jsonwebtoken (JWT)**
+- **Zod/Yup** for validation
 
 ---
 
-## 🛠️ Getting Started <a id="getting-started"></a>
+### ✅ Version 1.0 – Minimum Viable Product (MVP)
 
-### ⚙ Prerequisites
-- Node.js (LTS version recommended)
-- MongoDB (local installation or cloud-based service like MongoDB Atlas)
+Core features to launch the basic LMS platform.
 
-### 🔧 Installation
+- [x] Register & Login for Students and Teachers (with JWT, bcrypt, and user roles)
+- [x] Role-based dashboards (Student / Teacher)
+- [ ] Instructor Dashboard: Upload & manage courses
+- [ ] Student Dashboard: View and enroll in courses
+- [ ] Upload course content (Videos, PDFs, Notes)
+- [ ] Students can view course content after enrollment
+- [ ] Search & filter courses by category.
+---
 
-1.  **Clone the repository**:
+### ⏳ Version 2.0 – Admin Panel & Monetization
+Administrative features, analytics, payments, and polish.
 
-    ```bash
-    git clone https://github.com/GithubBirendra/paathshalahub.git
-    cd paathshala
-    ```
-    
-2.  **Backend Setup**:
+- [ ] Admin Dashboard: Manage users and courses
+- [ ] Approve/reject courses, block/verify instructors
+- [ ] Set free/paid status for courses
+- [ ] Payment gateway integration (E-sewa / Khalti)
+- [ ] Payment history tracking
 
-    ```bash
-    cd backend
-    npm install
-    ```
 
-    Create a `.env` file in the `backend` directory and add your MongoDB connection string and JWT secret:
-
-    ```env
-    MONGO_URI="your_mongodb_connection_string"
-    JWT_SECRET="a_strong_random_secret_key"
-    ```
-
-    Run the backend server:
-
-    ```bash
-    npm run dev
-    ```
-
-3.  **Frontend Setup**:
-
-    ```bash
-    cd frontend
-    npm install
-    ```
-
-    Run the frontend development server:
-
-    ```bash
-    npm run dev
-    ```
-
-    The frontend should now be accessible at `http://localhost:3000`.
 
 ---
+
+### 🔲 Version 3.0 – Interactive Learning Tools
+Tools to boost engagement and learning experience.
+
+- [ ] Add quizzes or assessments to courses
+- [ ] Student progress tracking and completion status
+- [ ] Notifications for teachers (enrollments, completions)
+- [ ] Course comment/discussion system
+- [ ] Course reviews and ratings
+- [ ] Show featured/latest/popular courses
+## ⚙️ Installation
+
+### Prerequisites
+- Node.js (v18+)
+- MongoDB
+- Git
+
+### Steps
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/your-username/lms-project.git
+cd lms-project
+
+# 2. Install dependencies
+npm install
+
+# 3. Configure environment variables
+cp .env.example .env
+# Then update MongoDB URI, JWT Secret, etc.
+
+# 4. Run the development server
+npm run dev
+## 📦 Versioning & Roadmap
+## 📦 Versioning & Roadmap
+
 
 ## 📞 Contact <a id="contact"></a>
 
@@ -210,4 +126,8 @@ If you have any questions, feel free to reach out!
 
 * **Name**: Birendra Bohara  
 * **Email**: bbirendra693@gmail.com  
-* **GitHub**: [https://github.com/GithubBirendra/paathshalahub](https://github.com/GithubBirendra/paathshalahub)
+* **GitHub**: [https://github.com/GithubBirendra/paathshalahub]
+
+---
+
+
