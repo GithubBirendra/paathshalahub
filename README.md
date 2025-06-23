@@ -1,5 +1,6 @@
 # 📘 Paathshala – Learning Management System (LMS)
 
+---
 Paathshala is a MERN stack-based Learning Management System aiming to simplify online education. Instructors can upload and manage courses, while students can learn, track progress — all from one intuitive platform.
 ---
 
