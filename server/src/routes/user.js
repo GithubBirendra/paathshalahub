@@ -32,7 +32,7 @@ userRouter.post("/login", async(req, res)=>{
     const isMatched= await bcrypt.compare(req.body.password, user.password)
      if(!isMatched) return res.send({message: 'Invalid password'})
 
-        const token = jwt.sign({email: req.body.email}, '01d7c48e4f61708396ce07ca0fe2adc4bf27d6235ab729c037c33940b0f7a53a5bb72e6e7e6afc42e05e82c743b3b4df28665ecdab843da287851823c2de8533')
+        const token = jwt.sign({email: req.body.email}, process.env.JWT_SECRET)
         console.log(token);
       return res.send({
           message: 'logged in successfully',

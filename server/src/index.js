@@ -3,8 +3,12 @@ import express from "express"
 import connect from './db/connect.js'
 import userRouter from './routes/user.js'
 import cors from 'cors';
+import dotenv from 'dotenv';
+dotenv.config();
+
 const app = express();
-const port = 8080;
+const port = process.env.PORT
+
 
 connect();
 app.use(cors());

@@ -60,7 +60,7 @@ const Register = () => {
     //   description: `Welcome ${values.fullName}! Your account has been created.`,
     // });
     // toast("Registration Successful!");
-    const {data} = await axios.post('http://localhost:8080/register', values)
+    const {data} = await axios.post(process.env.NEXT_PUBLIC_API_URL+'/register', values)
     toast(data);
   };
 

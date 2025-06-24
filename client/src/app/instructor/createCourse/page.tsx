@@ -1,3 +1,6 @@
+import CourseLandingPage from '@/components/addNewCourse/courseLandingPage';
+import Curriculum from '@/components/addNewCourse/curriculum';
+import Settings from '@/components/addNewCourse/settings';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -22,14 +25,17 @@ const AddNewCourse = () => {
 <TabsTrigger value='course-landing-page'> Course Landing Page </TabsTrigger>
 <TabsTrigger value='settings'> Settings </TabsTrigger>
     </TabsList>
+
     <TabsContent value='curriculum'>
-        
+      <Curriculum />
         
     </TabsContent>
      <TabsContent value='course-landing-page'>
+      <CourseLandingPage/>
         
     </TabsContent>
      <TabsContent value='settings'>
+      <Settings />
         
     </TabsContent>
 
