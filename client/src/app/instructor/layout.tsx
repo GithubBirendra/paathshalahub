@@ -17,10 +17,10 @@ export default function Layout({ children }: { children: ReactNode }) {
             <Link href="/instructor/courses">Courses</Link>
           </li>
 
-          <li className='flex justify-start items-center hover:bg-blue-200 hover:text-blue-800 rounded-xl p-2'>
+          {/* <li className='flex justify-start items-center hover:bg-blue-200 hover:text-blue-800 rounded-xl p-2'>
             <Users className='mr-2'/>
             <Link href="/instructor/student">Student</Link>
-          </li>
+          </li> */}
 
           <li className='flex justify-start items-center hover:bg-blue-200 hover:text-blue-800 rounded-xl p-2'>
             <LogOut className='mr-2'/>

@@ -1,3 +1,4 @@
+'use client'
 import CourseLandingPage from '@/components/addNewCourse/courseLandingPage';
 import Curriculum from '@/components/addNewCourse/curriculum';
 import Settings from '@/components/addNewCourse/settings';
@@ -7,13 +8,19 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import React from 'react'
 
 const AddNewCourse = () => {
+  const [courseData, setCourseData] = React.useState<any>({});
+
+  const handleCourseDataChange = (data: any) => {
+    setCourseData(data);
+  };
+
   return (
     <div className='container mx-auto p-4'>
     <div className='flex justify-between'>
         <h1 className='text-2xl font-bold text-gray-800 mb-5'>
         Create a new course
         </h1>
-        <Button className='text-sm tracking-wider font-bold px-8  '>Publish</Button>
+        {/* <Button className='text-sm tracking-wider font-bold px-8  '>SUBMIT</Button> */}
     </div>
 
     <Card>
@@ -31,11 +38,14 @@ const AddNewCourse = () => {
         
     </TabsContent>
      <TabsContent value='course-landing-page'>
-      <CourseLandingPage/>
+      <CourseLandingPage
+        courseData={courseData}
+        onCourseDataChange={handleCourseDataChange}
+      />
         
     </TabsContent>
      <TabsContent value='settings'>
-      <Settings />
+      <Settings/>
         
     </TabsContent>
 
