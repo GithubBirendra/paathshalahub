@@ -19,7 +19,7 @@ import { Delete, Edit } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 
-// ✅ Define the Course type
+//  Define the Course type
 type Course = {
   _id: string;
   title: string;
@@ -29,9 +29,9 @@ type Course = {
 
 const CoursesPage = () => {
   const router = useRouter();
-  const [courses, setCourses] = useState<Course[]>([]); // ✅ Set the type of course list
+  const [courses, setCourses] = useState<Course[]>([]); //  Set the type of course list
 
-  // ✅ Fetch courses from backend
+  //  Fetch courses from backend
   useEffect(() => {
     fetchCourses();
   }, []);

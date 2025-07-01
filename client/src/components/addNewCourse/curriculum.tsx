@@ -1,75 +1,107 @@
 'use client';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Download, Trash2, Video } from 'lucide-react';
-import { useState } from 'react';
+
+type Lecture = {
+  _id: string;
+  title: string;
+  isFreePreview: boolean;
+  hasVideo: boolean;
+};
 
 export default function Curriculum() {
-  const [lectures, setLectures] = useState([
-    { 
-      id: 1, 
-      title: 'Introduction', 
-      isFreePreview: true,
-      hasVideo: true
-    },
-  ]);
+  const [lectures, setLectures] = useState<Lecture[]>([]);
 
-  const addNewLecture = () => {
-    const newId = lectures.length > 0 ? Math.max(...lectures.map(l => l.id)) + 1 : 1;
-    setLectures([
-      ...lectures, 
-      { 
-        id: newId, 
-        title: '', 
-        isFreePreview: false,
-        hasVideo: false
+  //Fetch lectures on load
+  useEffect(() => {
+    const fetchLectures = async () => {
+      try {
+        const res = await axios.get(process.env.NEXT_PUBLIC_API_URL+'/lecture');
+        setLectures(res.data);
+      } catch (err) {
+        console.error('Failed to fetch lectures:', err);
       }
-    ]);
+    };
+    fetchLectures();
+  }, []);
+
+  // Update lecture in DB
+  const updateLecture = async (id: string, updatedFields: Partial<Lecture>) => {
+    try {
+      const lectureToUpdate = lectures.find((l) => l._id === id);
+      const res = await axios.put(process.env.NEXT_PUBLIC_API_URL+`/lecture/${id}`, {
+        ...lectureToUpdate,
+        ...updatedFields,
+      });
+      setLectures(lectures.map((l) => (l._id === id ? res.data : l)));
+    } catch (err) {
+      console.error('Failed to update lecture:', err);
+    }
   };
 
-  const updateLectureTitle = (id: number, title: string) => {
-    setLectures(lectures.map(lecture => 
-      lecture.id === id ? { ...lecture, title } : lecture
-    ));
+  // POST new lecture
+  const addNewLecture = async () => {
+    try {
+      const res = await axios.post(process.env.NEXT_PUBLIC_API_URL+'/lecture', {
+        title: 'Untitled Lecture',
+        isFreePreview: false,
+        hasVideo: false,
+      });
+      setLectures([...lectures, res.data]);
+    } catch (err) {
+      console.error('Failed to add lecture:', err);
+    }
   };
 
-  const toggleFreePreview = (id: number) => {
-    setLectures(lectures.map(lecture => 
-      lecture.id === id ? { ...lecture, isFreePreview: !lecture.isFreePreview } : lecture
-    ));
+  // Update lecture title
+  const updateLectureTitle = (id: string, title: string) => {
+    updateLecture(id, { title });
   };
 
-  const handleVideoUpload = (id: number) => {
-    setLectures(lectures.map(lecture => 
-      lecture.id === id ? { ...lecture, hasVideo: true } : lecture
-    ));
+  // Toggle free preview in DB
+  const toggleFreePreview = (id: string) => {
+    const current = lectures.find((l) => l._id === id);
+    if (current) {
+      updateLecture(id, { isFreePreview: !current.isFreePreview });
+    }
   };
 
-  const deleteLecture = (id: number) => {
-    setLectures(lectures.filter(lecture => lecture.id !== id));
+  // Simulate video upload
+  const handleVideoUpload = (id: string) => {
+    updateLecture(id, { hasVideo: true });
+  };
+
+  // Delete lecture from DB
+  const deleteLecture = async (id: string) => {
+    try {
+      await axios.delete(process.env.NEXT_PUBLIC_API_URL+`/lecture/${id}`);
+      setLectures(lectures.filter((l) => l._id !== id));
+    } catch (err) {
+      console.error('Failed to delete lecture:', err);
+    }
   };
 
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <h2 className="text-xl font-semibold">Create Course Curriculum</h2>
-        <Button 
-          onClick={addNewLecture}
-          className="bg-blue-600 hover:bg-blue-700"
-        >
+        <Button onClick={addNewLecture} className="bg-blue-600 hover:bg-blue-700">
           Add lecture
         </Button>
       </div>
 
       <div className="space-y-4">
-        {lectures.map((lecture) => (
-          <div key={lecture.id} className="border border-gray-200 rounded-lg p-4">
+        {lectures.map((lecture, index) => (
+          <div key={lecture._id} className="border border-gray-200 rounded-lg p-4">
             <div className="flex items-center gap-2 mb-3">
-              <span className="font-medium text-gray-700">Lecture {lecture.id}</span>
+              <span className="font-medium text-gray-700">Lecture {index + 1}</span>
               <Input
                 value={lecture.title}
-                onChange={(e) => updateLectureTitle(lecture.id, e.target.value)}
+                onChange={(e) => updateLectureTitle(lecture._id, e.target.value)}
                 placeholder="Enter lecture title"
                 className="flex-1"
               />
@@ -78,12 +110,12 @@ export default function Curriculum() {
             <div className="flex items-center space-x-4 mb-4">
               <div className="flex items-center space-x-2">
                 <Checkbox
-                  id={`free-preview-${lecture.id}`}
+                  id={`free-preview-${lecture._id}`}
                   checked={lecture.isFreePreview}
-                  onCheckedChange={() => toggleFreePreview(lecture.id)}
+                  onCheckedChange={() => toggleFreePreview(lecture._id)}
                 />
-                <label 
-                  htmlFor={`free-preview-${lecture.id}`}
+                <label
+                  htmlFor={`free-preview-${lecture._id}`}
                   className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 >
                   Free Preview
@@ -107,18 +139,14 @@ export default function Curriculum() {
             ) : null}
 
             <div className="flex gap-3">
-              <Button 
-                variant="outline" 
-                className="gap-2"
-                onClick={() => handleVideoUpload(lecture.id)}
-              >
+              <Button variant="outline" className="gap-2" onClick={() => handleVideoUpload(lecture._id)}>
                 <Video className="h-4 w-4" />
                 {lecture.hasVideo ? 'Replace Video' : 'Upload Video'}
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="gap-2 text-red-600 hover:text-red-700 hover:bg-red-50"
-                onClick={() => deleteLecture(lecture.id)}
+                onClick={() => deleteLecture(lecture._id)}
               >
                 <Trash2 className="h-4 w-4" />
                 Delete Lecture
