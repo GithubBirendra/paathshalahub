@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Button } from '@/components/ui/button';
@@ -13,7 +13,7 @@ import { User, Mail, Lock} from 'lucide-react';
 import Link from 'next/link';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addLoginDetails } from '@/redux/reducerSlices/userSlice';
 
 
@@ -35,6 +35,13 @@ interface FormValues {
 
 const Login = () => {
 
+const {isLoggedIn}= useSelector((state:any)=>state.user);
+useEffect(()=>{
+  if(isLoggedIn) router.push('/')
+
+}, []);
+
+
   const initialValues: FormValues = {
     email: '',
     password: '',
@@ -42,6 +49,7 @@ const Login = () => {
 
   const router = useRouter();
   const dispatch = useDispatch();
+  
   const handleSubmit = async (values: FormValues) => {
     const {data} = await axios.post(process.env.NEXT_PUBLIC_API_URL+'/login', values)
     if(data?.isLoggedIn) 

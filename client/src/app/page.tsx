@@ -8,6 +8,7 @@ import Testimonials from "@/components/ui/testimonials";
 import Link from "next/link";
 import React from "react";
 import Navbar from "@/components/navbar";
+import AllCourses from "@/components/featured-courses";
 
 
 const Home = ()=>{
@@ -15,7 +16,8 @@ const Home = ()=>{
       <div className="min-h-screen">
       <Navbar/>
      <Hero/>
-     <FeaturedCourses/>
+     {/* <FeaturedCourses/> */}
+     <AllCourses/>
      <Features/>
     <Testimonials/>
     <Footer/>
