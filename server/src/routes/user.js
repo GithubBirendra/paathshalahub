@@ -25,22 +25,25 @@ userRouter.post("/register", async (req, res) => {
 });
 
 userRouter.post("/login", async(req, res)=>{
-    // const{email, password}= req.body
     const user= await User.findOne({email: req.body.email});
-    if(!user) return res.send({message: "Email not found"});
+    if(!user) return res.send({message: "Email not found", isLoggedIn: false});
 
     const isMatched= await bcrypt.compare(req.body.password, user.password)
-     if(!isMatched) return res.send({message: 'Invalid password'})
+     if(!isMatched) return res.send({message: 'Invalid password', isLoggedIn: false})
 
         const token = jwt.sign({email: req.body.email}, process.env.JWT_SECRET)
-        console.log(token);
       return res.send({
           message: 'logged in successfully',
-          user: user,
           isLoggedIn: true,
-          token
-        })
-  })
+          token,
+          user:{
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+            role: user.role
+          }
+        });
+  });
 
 userRouter.get("/users", async (req, res)=>{
     const data= await User.find();

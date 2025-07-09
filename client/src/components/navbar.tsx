@@ -10,13 +10,29 @@ import {
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { Bell, Menu, ShoppingBag, X } from "lucide-react";
+import { Bell, LogOut, Menu, Settings, ShoppingBag, X } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Input } from "./ui/input";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/navigation";
+import { logoutUser } from "@/redux/reducerSlices/userSlice";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
+import Image from "next/image";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const {isLoggedIn, name} = useSelector((state: any)=>state.user);
+  const avatarName = name || "User";
+
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+  const handleLogout =()=>{
+    dispatch(logoutUser());
+    router.push('/');
+  };
 
   return (
     <header className="w-full border-b shadow-sm sticky top-0 z-50 bg-white transition-shadow">
@@ -73,12 +89,43 @@ export default function Navbar() {
           <Bell className="h-5 w-5" />
 
           {/* Auth Buttons */}
+          {isLoggedIn ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="flex items-center gap-2 focus:outline-none">
+                  <img
+                    src={`https://ui-avatars.com/api/?name=${avatarName}&background=random`}
+                    alt="avatar"
+                    width={32}
+                    height={32}
+                   className="rounded-full"
+                      />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="mt-2">
+                <DropdownMenuItem onClick={()=> router.push('/settings')}>
+                  <Settings className="mr-2 h-4 w-4"/>
+                  Settings
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={handleLogout}>
+                  <LogOut className="mr-2 h-4 w-4" />
+                  Logout
+                </DropdownMenuItem>
+
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ): (
+             <>
           <Link href="/login">
             <Button variant="outline">Sign In</Button>
           </Link>
           <Link href="/register">
             <Button>Register</Button>
           </Link>
+          </>
+
+          )}
+         
         </div>
       </div>
 
@@ -106,7 +153,14 @@ export default function Navbar() {
                 </NavigationMenuLink>
               </NavigationMenuItem>
 
-              <div className="flex gap-2">
+              {isLoggedIn ? (
+                <div className="flex flex-col gap-2">
+                  <Button onClick={()=> router.push('/settings')}>Settings</Button>
+                  <Button variant="destructive" onClick={handleLogout}>Logout</Button>
+
+                </div>
+              ): (
+                <div className="flex flex-col gap-2">
                 <Link href="/login">
                   <Button className="w-full">Sign In</Button>
                 </Link>
@@ -114,6 +168,10 @@ export default function Navbar() {
                   <Button className="w-full">Register</Button>
                 </Link>
               </div>
+                
+              )}
+
+              
             </NavigationMenuList>
           </NavigationMenu>
         </div>

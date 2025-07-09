@@ -13,6 +13,7 @@ courseRouter.get("/course", async (req, res) => {
   }
 });
 
+
 courseRouter.post("/course", async (req, res) => {
   try {
     // Validate using Yup schema

@@ -7,16 +7,16 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-// import { toast } from '@/hooks/use-toast';
 import { toast } from "sonner"
 import { User, Mail, Lock} from 'lucide-react';
 import Link from 'next/link';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 
 // Validation schema using Yup
 const validationSchema = Yup.object({
-  fullName: Yup.string()
+  name: Yup.string()
     .min(2, 'Full name must be at least 2 characters')
     .max(50, 'Full name must be less than 50 characters')
     .required('Full name is required'),
@@ -36,7 +36,7 @@ const validationSchema = Yup.object({
 });
 
 interface FormValues {
-  fullName: string;
+  name: string;
   email: string;
   password: string;
   confirmPassword: string;
@@ -44,9 +44,10 @@ interface FormValues {
 }
 
 const Register = () => {
+  const router = useRouter();
 
   const initialValues: FormValues = {
-    fullName: '',
+    name: '',
     email: '',
     password: '',
     confirmPassword: '',
@@ -54,21 +55,27 @@ const Register = () => {
   };
 
   const handleSubmit = async (values: FormValues) => {
-    // console.log('Registration data:', values);
-    // toast({
-    //   title: "Registration Successful!",
-    //   description: `Welcome ${values.fullName}! Your account has been created.`,
-    // });
-    // toast("Registration Successful!");
-    const {data} = await axios.post(process.env.NEXT_PUBLIC_API_URL+'/register', values)
-    toast(data);
+    try {
+      const { data } = await axios.post(process.env.NEXT_PUBLIC_API_URL + '/register', values);
+      toast(data);
+
+      if (data === "Register Successfully!") {
+        router.push('/login');
+      }
+    } catch (error) {
+      toast.error("Registration failed. Please try again.");
+    }
+
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-muted/20 to-background p-4">
-      <Card className="w-full max-w-md shadow-2xl border-0 bg-card/95 backdrop-blur">
+    <div className="min-h-screen flex items-center justify-center
+     bg-gradient-to-br from-background via-muted/20 to-background p-4">
+      <Card className="w-full max-w-md shadow-2xl border-0 bg-card/95
+       backdrop-blur">
         <CardHeader className="text-center space-y-4 pb-8">
-          <CardTitle className="text-3xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+          <CardTitle className="text-3xl font-bold bg-gradient-to-r
+           from-primary to-primary/70 bg-clip-text text-transparent">
             Create Your Account
           </CardTitle>
           <CardDescription className="text-lg text-muted-foreground">
@@ -92,12 +99,15 @@ const Register = () => {
                   </Label>
                   <Field
                     as={Input}
-                    id="fullName"
-                    name="fullName"
+                    id="name"
+                    name="name"
                     placeholder="Enter your full name"
-                    className={`transition-all duration-200 ${errors.fullName && touched.fullName ? 'border-destructive' : 'focus:border-primary'}`}
+                    className={`transition-all duration-200
+                       ${errors.name && touched.name ? 'border-destructive'
+                         : 'focus:border-primary'}`}
                   />
-                  <ErrorMessage name="fullName" component="div" className="text-sm text-destructive" />
+                  <ErrorMessage name="fullName" component="div" className="text-sm
+                   text-destructive" />
                 </div>
 
                 {/* Email */}

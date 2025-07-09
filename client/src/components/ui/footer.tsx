@@ -1,5 +1,6 @@
 import React from 'react';
 import { BookOpen, Users, Calendar, LayoutDashboard } from 'lucide-react';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -38,7 +39,6 @@ const Footer = () => {
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">All Courses</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">About Us</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Instructors</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Student Portal</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Certifications</a></li>
             </ul>
           </div>
@@ -47,11 +47,31 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Support</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Help Center</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Contact Us</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
+
+              <li>
+              <Link href="/contact-us" className="text-gray-300 hover:text-white transition-colors">
+              Contact Us
+              </Link>                
+              </li>
+
+              <li>
+              <Link href="/privacy-policy" className="text-gray-300 hover:text-white transition-colors">
+               Privacy Policy
+              </Link>                
+              </li>
+
+              <li>
+              <Link href="/terms-of-service" className="text-gray-300 hover:text-white transition-colors">
+              Terms of Service
+              </Link>                
+              </li>
+
+              <li>
+              <Link href="/faq" className="text-gray-300 hover:text-white transition-colors">
+               FAQ
+              </Link>                
+              </li>
+
             </ul>
           </div>
         </div>

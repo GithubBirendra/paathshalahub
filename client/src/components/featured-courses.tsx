@@ -20,6 +20,7 @@ type Course = {
 const AllCourses = () => {
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(true);
+  const [visibleCourses, setVisibleCourses] = useState(6);
 
   const fetchCourses = async () => {
     try {
@@ -54,7 +55,7 @@ const AllCourses = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {courses.map((course) => (
+          {courses.slice(0, visibleCourses).map((course) => (
             <Card
               key={course._id}
               className="group hover:shadow-2xl transition-all duration-300 hover:scale-105 border-0 shadow-lg"
@@ -110,15 +111,19 @@ const AllCourses = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Button
-            variant="outline"
-            size="lg"
-            className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 text-lg"
-          >
-            View All Courses
-          </Button>
-        </div>
+       {visibleCourses < courses.length && (
+  <div className="text-center mt-12">
+    <Button
+      onClick={() => setVisibleCourses((prev) => prev + 6)}
+      variant="outline"
+      size="lg"
+      className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 text-lg"
+    >
+      Load More
+    </Button>
+  </div>
+)}
+
       </div>
     </section>
   );
