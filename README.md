@@ -65,9 +65,9 @@ Core features to launch the basic LMS platform.
 
 - [x] Register & Login for Students and Teachers (with JWT, bcrypt, and user roles)
 - [x] Role-based dashboards (Student / Teacher)
-- [ ] Instructor Dashboard: Upload & manage courses
-- [ ] Student Dashboard: View and enroll in courses
-- [ ] Upload course content (Videos, PDFs, Notes)
+- [x] Instructor Dashboard: Upload & manage courses
+- [x] Student Dashboard: View and enroll in courses
+- [x] Upload course content (Videos, PDFs, Notes)
 - [ ] Students can view course content after enrollment
 - [ ] Search & filter courses by category.
 ---

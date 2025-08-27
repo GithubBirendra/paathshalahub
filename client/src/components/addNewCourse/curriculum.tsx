@@ -131,7 +131,7 @@ export default function Curriculum() {
       setLectures((prev) =>
         prev.map((l) => (l._id === id ? { ...l, hasVideo: false, videoUrl: "" } : l))
       );
-      toast.success("🗑️ Video deleted.");
+      toast.success("🗑️ Video deleted."); 
     } catch (err) {
       console.error("Delete video error:", err);
       toast.error("❌ Failed to delete video.");
